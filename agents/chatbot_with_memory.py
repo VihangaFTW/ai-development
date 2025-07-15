@@ -41,7 +41,7 @@ def _load_conversation_from_file(filename: str = "conversation_history.json") ->
             elif json_msg["type"] == "AI":
                 conversation_history.append(AIMessage(content=json_msg["content"]))
                 
-        print(f'Successfully loaded {len(conversation_history)} from {filename}')
+        print(f'Successfully loaded {len(conversation_history)} messages from {filename}')
     
     except (json.JSONDecodeError, KeyError) as err:
         print(f'There was an error while loading the conversation file: {err}')
