@@ -2,6 +2,10 @@
 
 A Retrieval-Augmented Generation (RAG) system that combines document retrieval with AI-powered question answering. This system processes text documents, creates semantic embeddings, stores them in a vector database, and provides intelligent responses to user queries.
 
+## 📚 About This Project
+
+This RAG implementation follows the core concepts taught in the [RAG Crash Course YouTube tutorial](https://www.youtube.com/watch?v=ea2W8IogX80&t=1437s), but has been significantly modified and enhanced for experimentation and additional features. The codebase includes custom implementations, improved error handling, comprehensive documentation, and a cleaner CLI interface while maintaining the fundamental RAG architecture principles from the course.
+
 ## 🚀 Features
 
 - **Document Processing**: Automatically loads and chunks text documents
@@ -189,9 +193,9 @@ Database setup complete
 
 Querying: Has Slack started prioritizing ai features in the app?
 
-Yes, Slack has started prioritizing AI features, integrating AI into its platform 
-with products like SlackGPT and partnerships with OpenAI. They are working to embed 
-AI to enhance user experience, communication, and workflow automation. 
+Yes, Slack has started prioritizing AI features, integrating AI into its platform
+with products like SlackGPT and partnerships with OpenAI. They are working to embed
+AI to enhance user experience, communication, and workflow automation.
 However, many of these features are still in development or in beta.
 ```
 
