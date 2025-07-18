@@ -3,4 +3,5 @@ __pycache__
 .cursor
 *.env
 *.md
+!README.md
 chroma
