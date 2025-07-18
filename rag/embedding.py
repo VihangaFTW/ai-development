@@ -53,14 +53,17 @@ class DocumentEmbedder():
         
         # load documents
         documents = self.__load_documents(self.path)
-        print(f'Loaded {len(documents)} documents!')
+        print(f'Loaded {len(documents)} documents')
         
         # generate chunks from all loaded documents
         self.chunks = self.__documents_to_chunks(documents)
         
         # associate the corresponding embedding for each of the generated chunks
-        for chunk in self.chunks:
+        print(f'Generating embeddings for {len(self.chunks)} chunks...')
+        for i, chunk in enumerate(self.chunks, 1):
             chunk["chunk_embedding"] =  self.__get_openai_embedding(chunk["chunk_content"])
+            if i % 5 == 0 or i == len(self.chunks):
+                print(f'  Progress: {i}/{len(self.chunks)} embeddings generated')
             
             
         return self.chunks
@@ -125,14 +128,14 @@ class DocumentEmbedder():
         document_chunks: list[Chunk] = []
         
         for doc in documents:
-            print(f'{"="*50} Splitting document {doc["doc_name"]} into chunks {"="*50}')
+            print(f'Processing {doc["doc_name"]}...')
             chunks: list[str] = self.__chunk_generator(doc["doc_content"])
             for i,chunk in enumerate(chunks):
                 document_chunks.append({
                     "chunk_id": f'{doc["doc_name"]}_chunk{i+1}',
                     "chunk_content": chunk
                 })
-            print(f'{"="*50} Chunks generated {"="*50}')
+            print(f'  Generated {len(chunks)} chunks')
             
         
         return document_chunks
@@ -148,10 +151,8 @@ class DocumentEmbedder():
         Returns:
             list[float]: The embedding vector as a list of floats.
         """
-        print(f'{"="*20} Generating embedding {"="*20}')
         response  = openai_client.embeddings.create(input=text, model="text-embedding-3-small")
         embedding: list[float] = response.data[0].embedding
-        print(f'{"="*20} Embedding generated successfully {"="*20}')
         return embedding
 
 
