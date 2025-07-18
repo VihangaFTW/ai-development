@@ -1,7 +1,8 @@
 from typing import TypedDict, NotRequired
 from dotenv import load_dotenv
-import os
+from util import load_and_get_key
 from openai import OpenAI
+import os
 
 
 class Chunk(TypedDict):
@@ -15,9 +16,8 @@ class Document(TypedDict):
     doc_content: str
     
     
-load_dotenv()
 
-openai_key = os.getenv("OPENAI_API_KEY")
+openai_key = load_and_get_key()
 
 openai_client = OpenAI(api_key=openai_key)
 
