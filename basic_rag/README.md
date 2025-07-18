@@ -22,10 +22,10 @@ This RAG implementation follows the core concepts taught in the [RAG Crash Cours
 
 ## 🛠️ Installation
 
-1. **Clone the repository and navigate to the RAG directory**
+1. **Clone the repository and navigate to the basic_rag directory**
 
    ```bash
-   cd rag/
+   cd basic_rag/
    ```
 
 2. **Install dependencies using uv**
@@ -36,7 +36,7 @@ This RAG implementation follows the core concepts taught in the [RAG Crash Cours
 
 3. **Set up your OpenAI API key**
 
-   Create a `.env` file in the rag directory:
+   Create a `.env` file in the basic_rag directory:
 
    ```bash
    echo "OPENAI_API_KEY=your_api_key_here" > .env
@@ -45,7 +45,7 @@ This RAG implementation follows the core concepts taught in the [RAG Crash Cours
 ## 📁 Project Structure
 
 ```
-rag/
+basic_rag/
 ├── main.py              # Main RAG pipeline orchestration
 ├── embedding.py         # Document loading, chunking, and embedding generation
 ├── chroma.py           # ChromaDB vector database operations
