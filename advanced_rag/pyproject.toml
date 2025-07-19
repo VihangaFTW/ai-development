@@ -1,0 +1,14 @@
+[project]
+name = "advanced-rag-app"
+version = "0.1.0"
+description = "An advanced rag application that uses Query Expansion technique"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "chromadb>=1.0.15",
+    "langchain>=0.3.26",
+    "openai>=1.97.0",
+    "pypdf>=5.8.0",
+    "python-dotenv>=1.1.1",
+    "tiktoken>=0.9.0",
+]
