@@ -2,7 +2,7 @@ from embedding import DocumentEmbedder
 from chroma import ChromaDb
 from util import load_and_get_key
 from openai import OpenAI
-from openai.types.chat import ChatCompletion, ChatCompletionMessage
+from openai.types.chat import ChatCompletion
 
 
 def generate_rag_response(question: str, relevant_chunks: list[str]) -> None:

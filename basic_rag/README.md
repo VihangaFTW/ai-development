@@ -25,6 +25,7 @@ This RAG implementation follows the core concepts taught in the [RAG Crash Cours
 1. **Clone the repository and navigate to the basic_rag directory**
 
    ```bash
+   git clone https://github.com/VihangaFTW/ai-development
    cd basic_rag/
    ```
 
