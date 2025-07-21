@@ -1,6 +1,6 @@
 # 🤖 AI Development Portfolio
 
-A comprehensive collection of AI projects showcasing modern techniques in **Retrieval-Augmented Generation (RAG)**, **LangGraph Agents**, and **AI application development**. This repository demonstrates practical implementations of cutting-edge AI technologies with real-world applications.
+A (to-be) comprehensive collection of AI projects showcasing modern techniques in **Retrieval-Augmented Generation (RAG)**, **LangGraph Agents**, and **AI application development**. Monthly contributions to this repo are expected unless I'm busy with work :)
 
 ## 🚀 Projects Overview
 
@@ -15,7 +15,7 @@ A comprehensive collection of AI projects showcasing modern techniques in **Retr
 - **🎨 Professional CLI**: Beautiful demo interface with progress tracking
 - **📄 PDF Processing**: Automated document chunking and embedding generation
 
-**Tech Stack**: ChromaDB, OpenAI API, Python, UV package manager
+**Tech Stack**: ChromaDB, OpenAI API, Python
 
 ### 📖 Basic RAG Implementation (`basic_rag/`)
 
@@ -27,7 +27,7 @@ A comprehensive collection of AI projects showcasing modern techniques in **Retr
 - **🔍 Semantic Search**: Document similarity and retrieval
 - **📊 Embedding Utilities**: Text vectorization and similarity matching
 
-**Tech Stack**: ChromaDB, Python, Basic embedding models
+**Tech Stack**: ChromaDB, Python, OpenAI API and their embedding models
 
 ### 🤖 LangGraph Agents (`langgraph_agents/`)
 
@@ -40,7 +40,7 @@ A comprehensive collection of AI projects showcasing modern techniques in **Retr
 - **🛠️ Tool-Using Chatbot**: Multi-tool integration and function calling
 - **📈 Stock Market Analysis**: Financial document processing agent
 
-**Tech Stack**: LangGraph, LangChain, Agent frameworks
+**Tech Stack**: LangGraph, LangChain, OpenAI API
 
 ### 🎓 LangGraph Basics (`langgraph_basics/`)
 
@@ -86,7 +86,6 @@ Each project includes its own detailed README with setup instructions:
 ```bash
 # Clone the repository
 git clone https://github.com/VihangaFTW/ai-development
-cd ai-development
 
 # Choose your project of interest
 cd advanced_rag/     # For advanced RAG techniques
