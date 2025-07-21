@@ -70,7 +70,7 @@ A (to-be) comprehensive collection of AI projects showcasing modern techniques i
 
 ### **Development Tools**
 
-- **Python 3.8+** - Primary programming language
+- **Python 3.13+** - Primary programming language
 - **UV** - Fast Python package manager
 - **Jupyter Notebooks** - Interactive development
 - **PDF Processing** - Document parsing and chunking
@@ -100,7 +100,7 @@ cd langgraph_basics/ # For LangGraph tutorials
 
 ## 🛠️ Development Setup
 
-**For contributors and developers working on this repository:**
+**For developers working on this repository:**
 
 After cloning the repository, set up the development environment:
 
