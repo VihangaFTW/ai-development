@@ -1,0 +1,34 @@
+name: Format python files
+on:
+  push:
+    branches: [main]
+
+jobs:
+  formatter:
+    name: Run ruff formatter
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+
+      - name: Install dependencies and run ruff format
+        run: |
+          # check each Python project directory for pyproject.toml and run ruff format
+          find . -name "pyproject.toml" -type f |
+          while read -r pyproject_file; do
+            project_dir=$(dirname "$pyproject_file")
+            echo "Formatting Python project in: $project_dir"
+            pushd "$project_dir"
+            uv sync
+            uv run ruff format .
+            popd
+          done
