@@ -132,7 +132,7 @@ class ChromaDb():
         except ValueError as e:
             print(f'Error: Collection "{collection_name}" not found')
             
-    def query_documents(self, question: str, collection_name: str, n_results=2, **kwargs) -> QueryResult | list[str] | None:
+    def query_documents(self, question: str | list[str], collection_name: str, n_results=2, deduplicate=True, **kwargs) -> QueryResult | list[str] | None:
         """
         Query the ChromaDB collection for documents most relevant to a given question.
         
@@ -142,10 +142,12 @@ class ChromaDb():
         on the 'include' parameter.
         
         Args:
-            question (str): The question or query text to search for relevant documents.
+            question (str | list[str]): The question or query text(s) to search for relevant documents.
             collection_name (str): The name of the collection to search within.
             n_results (int, optional): The maximum number of relevant chunks to return.
                                      Defaults to 2.
+            deduplicate (bool, optional): Whether to remove duplicate documents when using
+                                        multiple queries. Defaults to True.
             **kwargs: Additional parameters passed to ChromaDB's query method:
                 - where (dict, optional): Metadata filtering conditions
                 - where_document (dict, optional): Document content filtering conditions  
@@ -165,9 +167,17 @@ class ChromaDb():
         Examples:
             >>> db = ChromaDb()
             
-            # Default behavior - returns list of document strings
+            # Default behavior - returns list of document strings with deduplication
             >>> docs = db.query_documents("What is revenue?", "docs")
             >>> print(docs)  # ["Revenue was $50B", "Total revenue increased..."]
+            
+            # Multiple queries with deduplication (default)
+            >>> docs = db.query_documents(["What is revenue?", "What is profit?"], "docs")
+            >>> print(docs)  # Deduplicated results
+            
+            # Multiple queries without deduplication
+            >>> docs = db.query_documents(["What is revenue?", "What is profit?"], "docs", deduplicate=False)
+            >>> print(docs)  # May contain duplicates
             
             # Custom include - returns full QueryResult
             >>> results = db.query_documents(
@@ -192,12 +202,22 @@ class ChromaDb():
                 documents = results.get('documents', [])
                 if documents:
                     relevant_chunks: list[str] = [doc for sublist in documents for doc in sublist]
+                    
+                    # remove duplicate document chunks if flagged
+                    if deduplicate:
+                        seen = set()
+                        unique_chunks = []
+                        for chunk in relevant_chunks:
+                            if chunk not in seen:
+                                seen.add(chunk)
+                                unique_chunks.append(chunk)
+                        relevant_chunks = unique_chunks
                 else:
                     relevant_chunks = []
                 
                 return relevant_chunks
             else:
-                # uer specified custom include, return full QueryResult
+                # user specified custom include, return full QueryResult
                 results: QueryResult = collection.query(query_texts=question, n_results=n_results, **kwargs)
                 return results
         
