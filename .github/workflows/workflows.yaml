@@ -28,7 +28,7 @@ jobs:
             project_dir=$(dirname "$pyproject_file")
             echo "Formatting Python project in: $project_dir"
             pushd "$project_dir"
-            uv sync
+            uv add --dev ruff
             uv run ruff format .
             popd
           done
