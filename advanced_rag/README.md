@@ -46,7 +46,7 @@ This project showcases advanced RAG techniques that go beyond basic semantic sea
 1. **Clone the repository**:
 
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/VihangaFTW/ai-development/tree/main/advanced_rag
    cd advanced_rag
    ```
 
