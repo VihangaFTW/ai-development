@@ -17,6 +17,8 @@ A (to-be) comprehensive collection of AI projects showcasing modern techniques i
 
 **Tech Stack**: ChromaDB, OpenAI API, Python
 
+Note: A de-noiser pipeline for the llm generated subqueries has not been implemented yet. This section will be updated once the implementation is complete.
+
 ### 📖 Basic RAG Implementation (`basic_rag/`)
 
 **Foundational RAG system for learning and experimentation**
