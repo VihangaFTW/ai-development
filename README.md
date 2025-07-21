@@ -17,7 +17,7 @@ A (to-be) comprehensive collection of AI projects showcasing modern techniques i
 
 **Tech Stack**: ChromaDB, OpenAI API, Python
 
- >**Note**
+> **Note**
 >
 > A de-noiser pipeline for the llm generated subqueries has not been implemented yet. This section will be updated once the implementation is complete.
 
@@ -98,6 +98,28 @@ cd langgraph_agents/ # For intelligent agents
 cd langgraph_basics/ # For LangGraph tutorials
 ```
 
+## 🛠️ Development Setup
+
+**For contributors and developers working on this repository:**
+
+After cloning the repository, set up the development environment:
+
+```bash
+# Install dependencies using uv (our preferred package manager)
+uv sync
+
+# Install pre-commit hooks for automatic code formatting
+uv run pre-commit install
+```
+
+**What this does:**
+
+- 🔧 **Code Formatting**: Automatically formats Python code with `ruff` on every commit
+- 🧹 **Code Linting**: Fixes common code issues automatically
+- ✅ **Quality Assurance**: Ensures consistent code style across the project
+
+**Note**: Each contributor must run `uv run pre-commit install` once after cloning to enable automatic code formatting.
+
 ## 📊 Project Complexity
 
 | Project             | Complexity      | Focus Area       | Best For                        |
@@ -130,5 +152,3 @@ cd langgraph_basics/ # For LangGraph tutorials
 This project is licensed under the MIT License - see individual project folders for specific details.
 
 ---
-
-
