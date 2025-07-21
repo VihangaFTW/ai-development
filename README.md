@@ -126,8 +126,8 @@ uv run pre-commit install
 | ------------------- | --------------- | ---------------- | ------------------------------- |
 | `langgraph_basics/` | 🟢 Beginner     | Learning         | Getting started with LangGraph  |
 | `basic_rag/`        | 🟡 Intermediate | RAG Fundamentals | Understanding RAG concepts      |
-| `advanced_rag/`     | 🔴 Advanced     | Production RAG   | Professional RAG implementation |
-| `langgraph_agents/` | 🔴 Advanced     | Agent Systems    | Building intelligent agents     |
+| `advanced_rag/`     | 🟡 Intermediate | Production RAG   | Relatively optimized RAG implementation |
+| `langgraph_agents/` | 🟡 Intermediate | Agent Systems    | Building intelligent agents     |
 
 ## 💡 Learning Path
 
