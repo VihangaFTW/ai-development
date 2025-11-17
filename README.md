@@ -46,8 +46,6 @@ Pre-commit hooks automatically format code with `ruff` on every commit.
 1. `langgraph_basics/` - Fundamentals
 2. `basic_rag/` - RAG concepts
 3. `langgraph_agents/` - Agent systems
-4. `advanced_rag/` - Production RAG
+4. `advanced_rag/` - Optimized RAG implementation
 
-## License
 
-MIT License
